@@ -1,0 +1,50 @@
+---
+- name: install & configure VLAN's
+  hosts: inetRouter
+  become: yes
+
+  roles:
+    - inetRouter
+
+- name: install & configure VLAN's 2
+  hosts: centralRouter
+  become: yes
+  
+  roles:
+    - centralRouter
+
+- name: install & configure VLAN's 3
+  hosts: office1Router
+  become: yes
+  
+  roles:
+    - office1Router
+
+- name: install & configure VLAN's 4
+  hosts: testClient1
+  become: yes
+  
+  roles:
+    - testClient1
+
+- name: install & configure VLAN's 5
+  hosts: testServer1
+  become: yes
+  
+  roles:
+    - testServer1
+
+- name: install & configure VLAN's 6
+  hosts: testClient2
+  become: yes
+  
+  roles:
+    - testClient2
+
+- name: install & configure VLAN's 7
+  hosts: testServer2
+  become: yes
+  
+  roles:
+    - testServer2
+...

@@ -1,0 +1,7 @@
+---
+# handlers file for testServer1
+- name: restart_network
+  service:
+    name: NetworkManager
+    state: restarted
+    enabled: yes

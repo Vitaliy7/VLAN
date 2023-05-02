@@ -1,0 +1,18 @@
+---
+# tasks file for testServer2
+- name: install softs on Debian-based
+  apt:
+    name: 
+      - vim
+      - traceroute
+      - tcpdump
+      - net-tools
+    state: present
+    update_cache: true
+
+- name: copy file netplan
+  copy:
+    src: 50-cloud-init.yaml
+    dest: /etc/netplan/50-cloud-init.yaml
+  notify: 
+    - restart_network

@@ -1,0 +1,5 @@
+---
+# handlers file for centralRouter
+- name: restart_host
+  reboot:
+    reboot_timeout: 3600

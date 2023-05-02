@@ -1,0 +1,11 @@
+---
+# tasks file for office1Router
+- name: install softs on CentOS
+  yum:
+    name:
+      - vim
+      - traceroute
+      - tcpdump
+      - net-tools
+    state: present
+    update_cache: true

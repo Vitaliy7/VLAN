@@ -1,0 +1,25 @@
+---
+# tasks file for inetRouter
+- name: install softs on CentOS
+  yum:
+    name:
+      - vim
+      - traceroute
+      - tcpdump
+      - net-tools
+    state: present
+    update_cache: true
+
+- name: copy files ifcfg
+  copy:
+    src: '{{item}}'
+    dest: /etc/sysconfig/network-scripts/
+    owner: root
+    group: root
+    mode: 0644
+  with_items: 
+  - 'ifcfg-eth1'
+  - 'ifcfg-eth2'
+  - 'ifcfg-bond0'
+  notify:
+    - restart_host
